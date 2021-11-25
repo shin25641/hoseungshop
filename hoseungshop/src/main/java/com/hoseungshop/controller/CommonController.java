@@ -44,7 +44,6 @@ public class CommonController {
 	public String contact() {
 		return "/contact";
 	}
-	
-	
+
 	
 }

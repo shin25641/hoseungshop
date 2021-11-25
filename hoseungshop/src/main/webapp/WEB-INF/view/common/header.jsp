@@ -46,7 +46,7 @@
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__auth">
-            <a href="#">Login</a>
+            <a href="/login">Login</a>
             <a href="#">Register</a>
         </div>
     </div>
@@ -84,7 +84,7 @@
                 <div class="col-lg-3">
                     <div class="header__right">
                         <div class="header__right__auth">
-                            <a href="#">Login</a>
+                            <a href="/login">Login</a>
                             <a href="#">Register</a>
                         </div>
                         <ul class="header__right__widget">
