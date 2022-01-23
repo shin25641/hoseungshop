@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Ashion Template">
@@ -84,8 +85,15 @@
                 <div class="col-lg-3">
                     <div class="header__right">
                         <div class="header__right__auth">
-                            <a href="/login">Login</a>
-                            <a href="#">Register</a>
+                        	<c:choose>
+                        		<c:when test="${empty greeting}">
+                        			<a href="/login">LOGIN</a>
+                        		 	<a href="#">JOIN</a>
+                        		</c:when>
+                        		<c:otherwise>
+		                            <a href="/doLogout">LOGOUT</a>
+                        		</c:otherwise>
+                        	</c:choose>
                         </div>
                         <ul class="header__right__widget">
                             <li><span class="icon_search search-switch"></span></li>
