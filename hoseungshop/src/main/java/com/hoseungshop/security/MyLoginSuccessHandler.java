@@ -18,7 +18,7 @@ public class MyLoginSuccessHandler implements AuthenticationSuccessHandler{
 		// TODO Auto-generated method stub
 		System.out.println("로그인 성공!");
 		HttpSession session = request.getSession();
-		session.setAttribute("greeting", authentication.getName() + "님 반갑습니다.");
+		session.setAttribute("greeting", authentication.getName() + "님 / ");
 		response.sendRedirect("/");
 		
 	}
