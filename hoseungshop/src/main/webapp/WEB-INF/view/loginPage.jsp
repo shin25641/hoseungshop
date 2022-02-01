@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 <head>
 <meta name="viewport"
@@ -13,6 +14,9 @@
 			<h2>Login</h2>
 		</header>
 		<form action="doLogin" method="POST">
+			<c:if test="${LoginFailMessage!=null}">
+				<p> Error : <c:out value="${LoginFailMessage}"/> </p>
+			</c:if>
 			<div class="input-box">
 				<input id="username" type="text" name="username" placeholder="아이디">
 				<label for="username">아이디</label>

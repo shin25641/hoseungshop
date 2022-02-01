@@ -1,6 +1,7 @@
 package com.hoseungshop.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -25,6 +26,10 @@ public class CustomAuthenticationProvider implements AuthenticationProvider{
         
         CustomUserDetails user = (CustomUserDetails) userDeSer.loadUserByUsername(username);
         System.out.println("provider!");
+        
+        if(!user.isEnabled() || !user.isCredentialsNonExpired()) {
+            throw new AuthenticationCredentialsNotFoundException(username);
+        }
         
         if(!matchPassword(password, user.getPassword())) {
         	System.out.println("패스워드 불일치!!!");

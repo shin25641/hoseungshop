@@ -91,6 +91,7 @@
                         		 	<a href="#">JOIN</a>
                         		</c:when>
                         		<c:otherwise>
+                        			<a>${greeting}</a>
 		                            <a href="/doLogout">LOGOUT</a>
                         		</c:otherwise>
                         	</c:choose>

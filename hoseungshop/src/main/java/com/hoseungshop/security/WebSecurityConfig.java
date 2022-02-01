@@ -1,5 +1,6 @@
 package com.hoseungshop.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,6 +15,12 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	@Autowired
+	private LoginSuccessHandler loginSuccessHandler;
+	
+	@Autowired
+	private LoginFailureHandler loginFailureHandler;
 	
 
 		/*
@@ -47,10 +54,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.disable()
 			.formLogin()
 				.loginPage("/login")
-				.loginProcessingUrl("/doLogin")
+	            .defaultSuccessUrl("/",true)            // 로그인 성공시
+				.loginProcessingUrl("/doLogin")    
 				.usernameParameter("username")
 				.passwordParameter("password")
-				.successHandler(new MyLoginSuccessHandler())
+				.successHandler(loginSuccessHandler)
+				.failureHandler(loginFailureHandler)
 //				.permitAll()
 				.and()
 			.logout()

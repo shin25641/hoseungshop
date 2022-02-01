@@ -7,9 +7,11 @@
   <select id="findOneUser" parameterType="java.util.Map" resultType="com.hoseungshop.model.CustomUserDetails">
   <!-- selectUsers()메서드를 호출하면 실행할 SELECT문이며, UserDTO 객체를 파라미터로 받아, UserDTO객체를 반환합니다.-->
     SELECT * FROM USER
-    <if test='user_id != null and user_id != ""'><!-- 만약 파라미터에 country가 있다면 SQL문에 WHERE절을 추가합니다. -->
-    	WHERE USER_ID = #{user_id}
-    </if>
+    <where>
+	    <if test='user_id != null and user_id != ""'><!-- 만약 파라미터에 country가 있다면 SQL문에 WHERE절을 추가합니다. -->
+	    	AND USER_ID = #{user_id}
+	    </if>
+    </where>
   </select>
 
 </mapper>
