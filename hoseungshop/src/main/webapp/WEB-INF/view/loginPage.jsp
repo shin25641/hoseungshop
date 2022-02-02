@@ -11,7 +11,10 @@
 	<div class="login_page">
 		<div class="container login">
 		<header>
-			<h2>Login</h2>
+		   	<div class="header__logo">
+            	<a href="/"><img src="img/logo.png" alt=""></a>
+            </div>
+			<h2>로그인</h2>
 		</header>
 		<form action="doLogin" method="POST">
 			<c:if test="${LoginFailMessage!=null}">
@@ -25,9 +28,13 @@
 				<input id="password" type="password" name="password"
 					placeholder="비밀번호"> <label for="password">비밀번호</label>
 			</div>
-			<div id="forgot">비밀번호 찾기</div>
-			<input type="submit" value="로그인">
 		</form>
+			<div id="forgot"><a href="#">아이디 찾기</a> | <a href="#">비밀번호 찾기</a></div>
+			<input type="submit" value="로그인">
+			<p class="login-join-text">
+				<span>가입만 해도 즉시 15% 할인</span>
+				<a href="#">회원가입</a>
+			</p>
 		</div>
 	</div>
 </body>
