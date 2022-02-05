@@ -14,7 +14,7 @@
 		   	<div class="header__logo">
             	<a href="/"><img src="img/logo.png" alt=""></a>
             </div>
-			<h2>로그인</h2>
+			<h4>로그인</h4>
 		</header>
 		<form action="doLogin" method="POST">
 			<c:if test="${LoginFailMessage!=null}">
@@ -33,7 +33,7 @@
 			<input type="submit" value="로그인">
 			<p class="login-join-text">
 				<span>가입만 해도 즉시 15% 할인</span>
-				<a href="#">회원가입</a>
+				<a href="/joinForm">회원가입</a>
 			</p>
 		</div>
 	</div>

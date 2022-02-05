@@ -48,7 +48,7 @@
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__auth">
             <a href="/login">Login</a>
-            <a href="#">Register</a>
+            <a href="/joinForm">Register</a>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -87,12 +87,12 @@
                         <div class="header__right__auth">
                         	<c:choose>
                         		<c:when test="${empty greeting}">
-                        			<a href="/login">LOGIN</a>
-                        		 	<a href="#">JOIN</a>
+                        			<a href="/login">Login</a>
+                        		 	<a href="/joinForm">Register</a>
                         		</c:when>
                         		<c:otherwise>
                         			<a>${greeting}</a>
-		                            <a href="/doLogout">LOGOUT</a>
+		                            <a href="/doLogout">Logout</a>
                         		</c:otherwise>
                         	</c:choose>
                         </div>
